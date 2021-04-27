@@ -1,0 +1,19 @@
+{
+  "name": "create-fastify-app",
+  "version": "1.0.0",
+  "description": "CLI to create a Fastify based app using fastify-app-starter-template",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Xabadu/create-fastify-app.git"
+  },
+  "author": "Xabadu <xabadu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xabadu/create-fastify-app/issues"
+  },
+  "homepage": "https://github.com/Xabadu/create-fastify-app#readme"
+}
