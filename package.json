@@ -2,6 +2,9 @@
   "name": "create-fastify-app",
   "version": "1.0.0",
   "description": "CLI to create a Fastify based app using fastify-app-starter-template",
+  "bin": {
+    "create-fastify-app": "src/index.js"
+  },
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Xabadu/create-fastify-app/issues"
   },
-  "homepage": "https://github.com/Xabadu/create-fastify-app#readme"
+  "homepage": "https://github.com/Xabadu/create-fastify-app#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "ora": "^5.4.0"
+  }
 }
