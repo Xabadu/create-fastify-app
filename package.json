@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/Xabadu/create-fastify-app#readme",
   "dependencies": {
-    "chalk": "^4.1.1",
     "ora": "^5.4.0"
   }
 }
