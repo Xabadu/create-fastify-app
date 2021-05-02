@@ -2,17 +2,16 @@
 
 const { spawn } = require("child_process");
 const ora = require("ora");
-const chalk = require("chalk");
 
 const TEMPLATE_URL = "https://github.com/Xabadu/fastify-app-starter-template";
 const appName = process.argv[2];
 
 const setupApp = async () => {
+  const spinner = ora();
   if (appName != null) {
     const workingDirectory = `${process.cwd()}/${appName}`;
-    const spinner = ora({
-      text: "📦 Cloning repo from GitHub\n",
-    }).start();
+    spinner.text = "📦 Cloning repo from GitHub\n";
+    spinner.start();
 
     await run("git", ["clone", TEMPLATE_URL, appName]);
     await run("rm", ["-rf", `${appName}/.git`]);
@@ -20,7 +19,7 @@ const setupApp = async () => {
     spinner.text = "🛠  Installing dependencies\n";
     await run("npm", ["install"], { cwd: workingDirectory });
 
-    spinner.text = "⚙️ Setting up repo\n";
+    spinner.text = "⚙️  Setting up repo\n";
     await run("git", ["init"], { cwd: workingDirectory });
     await run("git", ["add", "."], { cwd: workingDirectory });
     await run("git", ["commit", "-m", "Initial commit"], {
@@ -36,8 +35,8 @@ const setupApp = async () => {
     console.log("2. npm run dev");
     console.log("3. Build ✌️");
   } else {
-    console.log(`${chalk.red("Error -")} No app name passed as an argument`);
-    console.log("Usage: create-fastify-app app-name");
+    spinner.fail("Error - No app name passed as an argument\n");
+    spinner.info("Usage: create-fastify-app app-name");
   }
 };
 
