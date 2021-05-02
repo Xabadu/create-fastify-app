@@ -1,5 +1,5 @@
 {
-  "name": "create-fastify-app",
+  "name": "@xabadu/create-fastify-app",
   "version": "1.0.0",
   "description": "CLI to create a Fastify based app using fastify-app-starter-template",
   "bin": {
